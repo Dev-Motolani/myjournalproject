@@ -1,0 +1,22 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}{% endblock title %}</title>
+    <link rel="stylesheet" href="{% static 'journals/css/style.css' %}">
+</head>
+
+<body>
+    <div class="ambient ambient-left" aria-hidden="true"></div>
+    <div class="ambient ambient-right" aria-hidden="true"></div>
+    <div class="page-shell">
+        <main class="surface">
+            {% block content %}{% endblock content %}
+        </main>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,15 @@
+{% extends 'journals/base.html' %}
+
+{% block content %}
+<section class="form-card danger-card">
+    <h1>Do you want to delete this title?</h1>
+    <form method="post" class="journal-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div class="form-actions">
+            <button type="submit" class="primary-button destructive">Yes, delete</button>
+            <a href="{% url 'home' %}" class="secondary-button">Cancel</a>
+        </div>
+    </form>
+</section>
+{% endblock content %}

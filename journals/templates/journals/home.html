@@ -1,0 +1,18 @@
+{% extends 'journals/base.html' %}
+
+{% block content %}
+<section class="stack">
+    {% for T in titles %}
+    <article class="journal-card">
+        <a class="journal-title" href="{% url 'details' title_id=T.id %}">{{ T.title }}</a>
+        <div class="journal-actions">
+            <a class="action-link" href="{% url 'edit_title' title_id=T.id %}">Edit</a>
+            <span class="divider" aria-hidden="true">|</span>
+            <a class="action-link danger" href="{% url 'delete_title' title_id=T.id %}">Delete</a>
+        </div>
+    </article>
+    {% empty %}
+    <p class="empty-state">Check back later for exciting journals.</p>
+    {% endfor %}
+</section>
+{% endblock content %}

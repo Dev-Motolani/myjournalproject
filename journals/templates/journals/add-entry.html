@@ -1,0 +1,12 @@
+{% extends 'journals/base.html' %}
+
+{% block content %}
+<section class="form-card">
+    <h1>Add Entry</h1>
+    <form method="post" class="journal-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="primary-button">Add Entry</button>
+    </form>
+</section>
+{% endblock content %}

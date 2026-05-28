@@ -1,0 +1,17 @@
+{% extends 'journals/base.html' %}
+
+{% block content %}
+<section class="detail-stack">
+    <header class="detail-head">
+        <h1>{{ title }}</h1>
+    </header>
+    <div class="entry-stack">
+        {% for entry in entries %}
+        <article class="entry-card">
+            <p class="entry-meta">Created at {{ entry.date_created }} | Last Updated {{ entry.date_updated }}</p>
+            <p class="entry-text">{{ entry.text }} </p>
+        </article>
+        {% endfor %}
+    </div>
+</section>
+{% endblock content %}
